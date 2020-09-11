@@ -1,10 +1,17 @@
 <h1 style="text-align: center;">Eat-The-Burger!</h1>
 
 <h2 style="text-align: center;">What Kind Of Burger Do You Want To Eat?</h2>
-<img src="/assets/img/burger.jpg">
+
 <ul>
-   
     {{#each burger}}
 
     {{/each}}
 </ul>
+
+<div class="center">
+    <form>
+        <label for="burgerName">Type your Burger below!</label><br>
+        <textarea id="burgerTA" name="burgerTA" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>

@@ -6,10 +6,11 @@ USE burgers_db;
 CREATE TABLE Burgers(
     id INT NOT NULL AUTO_INCREMENT,
     burger VARCHAR(150) DEFAULT '' NOT NULL,
+    devoured INT(1),
     PRIMARY KEY(id)
 );
 
-INSERT INTO customBurgers (burger) 
+INSERT INTO Burgers (burger, devoured) 
 VALUES
-("Kobi Beef W/Duck Bacon Burger and aged guda"),
-("5 Happy Meal Burger Stack");
+("Kobi Beef W/Duck Bacon Burger and aged guda",0),
+("5 Happy Meal Burger Stack", 0);

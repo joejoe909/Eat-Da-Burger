@@ -2,9 +2,22 @@
 
 <h2 style="text-align: center;">What Kind Of Burger Do You Want To Eat?</h2>
 
+<h2>Dream Burgers!!!!</h2>
 <ul>
     {{#each burger}}
+    {{#unless devoured}}
+    {{>burgers/burger-block devoured=false}}
+    {{/unless}}
+    {{/each}}
+</ul>
 
+<h2>Burgers That have Been devoured!!!!</h2>
+
+<ul>
+    {{#each burger}}
+     {{#if devoured}}
+         {{>burgers/burger-block devoured=true}}
+     {{/if}}
     {{/each}}
 </ul>
 

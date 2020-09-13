@@ -26,8 +26,8 @@ router.post("/api/burgers", function(req, res){
 
 router.put("/api/burgers/:id", function(req, res){
     const cond = "id=" + req.params.id;
-    cat.update({
-        sleepy: req.body.sleepy
+    burger.update({
+        sleepy: req.body.devoured
     }, cond, function(result){
         if(result.changedRows == 0){
             return res.status(404).end();

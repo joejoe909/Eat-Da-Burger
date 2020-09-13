@@ -2,7 +2,7 @@ const bORM = require("../config/burgerORM.js");
 
 let burger = {
     all: function(callBk){
-        bORM.all("burgers", function(res){
+        bORM.all("Burgers", function(res){
             callBk(res);
         });
     },
@@ -18,12 +18,10 @@ let burger = {
         });
     },
     delete: function(cond, callBk){
-        bORM.delete("Burgers", condition, callBk){
-            bORM.delete("cats", cond, function(res){
+        bORM.delete("Burgers", cond, function(res) {
                 callBk(res);
             });
         }
-    }
 };
 
 module.exports = burger;

@@ -17,24 +17,24 @@ function objToSql(obj){
         let val = obj[key];
         if(Object.hasOwnProperty.call(obj, key)){
             if(typeof val === "string" && val.indexOf(" ") >= 0){
-                val = "'" + value + "'";
+                val = "'" + val + "'";
             }
-            arr.push(key + "=" + values);
+            arr.push(key + "=" + val);
         }
     }
     return arr.toString();
 }
 
 //obj for all our SQL functions.
-var orm = {
+let bORM = {
     all: function(tbIn, callBk){
-        let qStr = "SELECT * FROM " + tableInput + ";";
+        let qStr = "SELECT * FROM " + tbIn + ";";
         conBDB.query(qStr, function(err, result){
             if(err){throw err;} callBk(result);
         });
     },
     create: function(tbl, cols, vals, callBk){
-        let qStr = "INSERT INTO " + table;
+        let qStr = "INSERT INTO " + tbl;
 
         qStr += " (";
         qStr += cols.toString();
@@ -50,17 +50,17 @@ var orm = {
         });
     },
     //our update system
-    update: function(tbl, objColVals, condition, callBk){
-        let qStr = "UPDATE" + table;
+    update: function(tbl, objColVals, cond, callBk){
+        let qStr = "UPDATE" + tbl;
 
         qStr += " SET ";
         qStr += objToSql(objColVals);
         qStr += " WHERE ";
-        qStr += condition;
+        qStr += cond;
 
         console.log(qStr);
         conBDB.query(qStr, function(err, res){
-            if(err){throw err;} callBk(result);
+            if(err){throw err;} callBk(res);
         });
     },
     delete: function(tbl, cond, callBk){
@@ -69,10 +69,10 @@ var orm = {
         qStr += cond;
 
         conBDB.query(qStr, function(err, res){
-            if(err){throw err;} callBk(result);
+            if(err){throw err;} callBk(res);
         });
     }
 };
 
 //export orm for model burgers.js
-module.exports = conBDB;
+module.exports = bORM;

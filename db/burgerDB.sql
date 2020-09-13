@@ -12,5 +12,7 @@ CREATE TABLE Burgers(
 
 INSERT INTO Burgers (burger, devoured) 
 VALUES
-("Kobi Beef W/Duck Bacon Burger and aged guda",0),
-("5 Happy Meal Burger Stack", 0);
+("Kobi Beef W/Duck Bacon Burger and aged guda", false),
+("5 Happy Meal Burger Stack", false),
+("Chilli Burger", true),
+("Impossible Burger", true);

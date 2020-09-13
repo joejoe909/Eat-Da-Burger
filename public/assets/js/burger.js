@@ -14,16 +14,13 @@ $(function(){
     })
 
 
-    $("#submit").on("submit", function(e){
+    $("#submit").on("click", function(e){
        e.preventDefault();
-        let nameB = $("#bin").val().trim()
-        console.log("Bin=" + nameB);
-       let newBurger ={
-           name: $("#bIn").val().trim(),
-           devoured: $("[burger=devoured]:checked").val.trim()
-       };
-        console.table(burgerStr);
-
+         let nameB = $("#bIn").val().trim()
+        let newBurger ={
+            burger: nameB,
+            devoured: 0
+        };
         //Send the POST request
         $.ajax("/api/burgers", {
             type: "POST",
@@ -33,7 +30,7 @@ $(function(){
                 location.reload();
             }
         )
-    })
+    });
 
     $(".delDis").on("click", function(e){
         const id = $(this).data("id");

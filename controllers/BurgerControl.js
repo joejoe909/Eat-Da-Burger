@@ -18,16 +18,17 @@ router.get("/", function(req, res){
 router.post("/api/burgers", function(req, res){
     burger.create(
         ["burger", "devoured"],
-        [req.body.name, req.body.devoured],
+        [req.body.burger, req.body.devoured],
         function(result){
             res.json({id: result.insertId});
         });
 });
 
 router.put("/api/burgers/:id", function(req, res){
+    alert("devour");
     const cond = "id=" + req.params.id;
     burger.update({
-        sleepy: req.body.devoured
+        devoured: req.body.devoured =True
     }, cond, function(result){
         if(result.changedRows == 0){
             return res.status(404).end();
@@ -39,7 +40,6 @@ router.put("/api/burgers/:id", function(req, res){
 
 router.delete("/api/burgers/:id", function(req, res){
     let cond = "id=" + req.params.id;
-
     burger.delete(cond, function(result){
         if(result.affectedRows == 0){
             return res.status(404).end();

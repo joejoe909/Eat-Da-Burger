@@ -2,12 +2,12 @@ $(function(){
     $(".dvrDis").on("click", function(e){
         const id = $(this).data("id");
         let dvrd = {
-            devoured: 1
+            devoured: "1"
         };
      
         $.ajax("/api/burgers/" +id, {
             type:"PUT",
-            devoured: 1
+            data: dvrd
         }).then(
             function(){
                 console.log("changed to devoured....");

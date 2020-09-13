@@ -43,7 +43,7 @@ let bORM = {
         qStr += prntQm(vals.length);
         qStr += ") ";
 
-        console.log(qStr);
+        console.log("from burgerORM " + qStr);
 
         conBDB.query(qStr, vals, function(err, result){
             if(err){throw err;} callBk(result);
@@ -51,7 +51,7 @@ let bORM = {
     },
     //our update system
     update: function(tbl, objColVals, cond, callBk){
-        let qStr = "UPDATE" + tbl;
+        let qStr = "UPDATE " + tbl;
 
         qStr += " SET ";
         qStr += objToSql(objColVals);

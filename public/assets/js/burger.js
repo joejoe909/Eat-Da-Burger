@@ -1,18 +1,20 @@
 $(function(){
     $(".dvrDis").on("click", function(e){
-        console.log("clicked");
         const id = $(this).data("id");
-        let devrd = $(this).data(true);
-        $.ajax("/api/burgers" +id,{
+        let dvrd = {
+            devoured: 1
+        };
+     
+        $.ajax("/api/burgers/" +id, {
             type:"PUT",
-            data: devrd
+            devoured: 1
         }).then(
             function(){
+                console.log("changed to devoured....");
                 location.reload();
             }
         )
     })
-
 
     $("#submit").on("click", function(e){
        e.preventDefault();

@@ -1,27 +1,26 @@
 const mysql = require("mysql");
-//const { connect } = require("../controllers/BurgerControl");
-
-const burgerDB = mysql.createConnection(
-    {
-        host:"localhost",
-        port: 3306,
-        user: "root",
-        password: "enter101",
-        database: "burgers_db"
-    }
-);
-
-// if(process.env.JAWSDB_URL){
-//     const burgerDB = mysql.createConnection(process.env.JAWSDB_URL);
-// }else{
-//   const burgerDB = mysql.createConnection({
+let burgerDB;
+// const burgerDB = mysql.createConnection(
+//     {
 //         host:"localhost",
 //         port: 3306,
 //         user: "root",
 //         password: "enter101",
-//         database: "burger_db"
-//     });
-// };
+//         database: "burgers_db"
+//     }
+// );
+
+if(process.env.JAWSDB_URL){
+    burgerDB = mysql.createConnection(process.env.JAWSDB_URL);
+}else{
+        burgerDB = mysql.createConnection({
+        host:"localhost",
+        port: 3306,
+        user: "root",
+        password: "enter101",
+        database: "burger_db"
+    });
+};
 
 
 

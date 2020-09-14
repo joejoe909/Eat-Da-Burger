@@ -5,7 +5,7 @@
 ## Description
 <img src = "./img/eb.png">
 <img src = "./img/bl.png">
-Eat-Da-Burger is a noobie database server. One can enter a dream burger and then mark weather they've consumed it via the devour button. The project utilizes MySQL,Express Server, Express-Handle Bars and of course Javascript. Once the program was completed it was uploaded to Heroku and utilizes JAWS DB. Please feel free to trial the program and let me know your dream burger <a href= "https://afternoon-sierra-35614.herokuapp.com/">here!</a> 
+Eat-Da-Burger is a newbie database server, one can enter a dream burger and then mark weather they've consumed it via the devour button. The project utilizes MySQL,Express Server, Express-Handle Bars and of course Javascript. Once the program was completed it was uploaded to Heroku and utilizes JAWS DB. Please feel free to trial the program and let me know your dream burger <a href= "https://afternoon-sierra-35614.herokuapp.com/">here!</a> 
 
      
   - [Description](#description)
